@@ -1,7 +1,9 @@
 import "./style.css"
 import html from "./file.html"
-
+const images = require.context('/src/img')
+const imagePath = (name) => images(name,true)
 import {myIcon}   from "./home.js";
+
 
 myIcon.classList.add('homeImg')
 
@@ -61,9 +63,6 @@ const para = document.createElement("p")
  
 }
  
- 
-
-
 
 menu.addEventListener('click',createMenu)
 
@@ -98,20 +97,18 @@ function createMenuItem(item,picUrl,price){
 
 }
   
-
  title1.innerHTML="..Menu.."
  content.appendChild(title1);
  content.appendChild(cardsContainer)
 
- createMenuItem("Burger1","../src/img/burger1.jpeg",4.99)
- createMenuItem("Burger2","../src/img/burger2.jpeg",2.99)
- createMenuItem("Burger3","../src/img/burger3.jpeg",4.99)
- createMenuItem("Burger4","../src/img/burger4.jpeg",7.99)
- createMenuItem("Fried Chicken ( 3 Pcs)","../src/img/friedchicken.jpeg",8.99)
- createMenuItem("Fries","../src/img/fries.jpeg",1.99)
- createMenuItem("Gyro Sandwich","../src/img/gyrosand.jpeg",6.99)
- createMenuItem("Gyro Plate","../src/img/gyroplate.jpeg",14.99)
-
+ createMenuItem("Burger1",images('./burger1.jpeg'),4.99)
+ createMenuItem("Burger2",images('./burger2.jpeg'),2.99)
+ createMenuItem("Burger3",images('./burger3.jpeg'),4.99)
+ createMenuItem("Burger4",images('./burger4.jpeg'),7.99)
+ createMenuItem("Fried Chicken ( 3 Pcs)",images("./friedchicken.jpeg"),8.99)
+ createMenuItem("Fries",images("./fries.jpeg"),1.99)
+ createMenuItem("Gyro Sandwich",images("./gyrosand.jpeg"),6.99)
+ createMenuItem("Gyro Plate",images("./gyroplate.jpeg"),14.99)
 
 
  // disable Menu ...enable Home & Contact
@@ -135,21 +132,21 @@ function createContact(){
 <div class="sideContactContainer">
        <h5 class="sideTitle">Address</h5>
         <div class="addressContainer">
-            <img src="../dist/icon/map-marker.png" alt="" class="addressIcon">
+            <img src="../src/icon/map-marker.png" alt="" class="addressIcon">
              <div class="address">Address
                   <p class="sidePara">12442 OldHickery Blvd Nashville,Tn 37013</p>
              </div>
         </div>
 
         <div class="emailContainer">
-             <img src="../dist/icon/email-edit.png" alt="" class="emailIcon">
+             <img src="../src/icon/email-edit.png" alt="" class="emailIcon">
              <div class="email">Email
                   <p class="sidePara">drsheko91@gmail.com</p>
             </div>
         </div>
 
         <div class="phoneContainer">
-            <img src="../dist/icon/cellphone-basic.png" alt="" class="phoneIcon">
+            <img src="../src/icon/cellphone-basic.png" alt="" class="phoneIcon">
             <div class="phone">Phone
                  <p class="sidePara">(615)495-3482</p>
             </div>
@@ -175,9 +172,7 @@ function createContact(){
   home.addEventListener('click', createHome)
   menu.addEventListener('click',createMenu)
 
-
 }
-
 
 
 // footer

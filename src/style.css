@@ -32,6 +32,8 @@ nav{
 }
 
 
+
+
 .content{
     margin:0 40px;
     padding:5px ;
@@ -152,4 +154,9 @@ input{
     color:white;
     font-weight: 700;
     border-radius: 5px;
+}
+
+.submitBtn:hover{
+    cursor:pointer;
+    color:black;
 }
